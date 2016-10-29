@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.ccw.ragecomic.BaseActivity;
 import com.ccw.ragecomic.R;
@@ -83,6 +84,6 @@ public class MainActivity extends BaseActivity {
     }
     //中间图片的点击事件
     public void ivClick(View view) {
-
+        Toast.makeText(this, "还没有", Toast.LENGTH_SHORT).show();
     }
 }
