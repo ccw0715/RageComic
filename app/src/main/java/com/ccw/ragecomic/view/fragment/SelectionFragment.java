@@ -16,6 +16,8 @@ import com.ccw.ragecomic.view.Adapter.FirstFgAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+
 /**
  * Created by 蔡灿武 on 2016/10/29 0029.
  */
@@ -32,17 +34,18 @@ public class SelectionFragment extends BaseFragment {
     private void initView(View view) {
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         ViewPager vp = (ViewPager) view.findViewById(R.id.viewPager);
-        String title[] = new String[]{"推荐","暴漫","趣图","视频","文字"};
+        String title[] = new String[]{"推荐", "暴漫", "趣图", "视频", "文字"};
         List<Fragment> fragments = new ArrayList<>();
         for (int i = 0; i < title.length; i++) {
-            MyFragment fragment = new MyFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("name",title[i]);
-            fragment.setArguments(bundle);
-           fragments.add(fragment);
+            fragments.add(new RecommendFragment());
+            fragments.add(new CartoonFragment());
+            fragments.add(new FunnyPictureFragment());
+            fragments.add(new VideoFragment());
+            fragments.add(new WordFragment());
         }
-        FirstFgAdapter adapter = new FirstFgAdapter(getChildFragmentManager(),fragments,title);
+        FirstFgAdapter adapter = new FirstFgAdapter(getChildFragmentManager(), fragments, title);
         vp.setAdapter(adapter);
         tabLayout.setupWithViewPager(vp);
+        getChildFragmentManager().beginTransaction().show(new RecommendFragment()).commit();
     }
 }

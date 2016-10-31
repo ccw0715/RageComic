@@ -3,7 +3,6 @@ package com.ccw.ragecomic.view.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,12 +31,9 @@ public class FirstFragment extends BaseFragment {
         selection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("哈哈日记", "onClick: dddddd");
                 SelectionFragment s=new SelectionFragment();
                 getChildFragmentManager().beginTransaction().add(R.id.ll,s).commit();
             }
         });
     }
-
-
 }

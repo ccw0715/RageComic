@@ -10,15 +10,15 @@ import android.widget.TextView;
 import com.ccw.ragecomic.BaseFragment;
 
 /**
- * Created by 蔡灿武 on 2016/10/29 0029.
+ * Created by 蔡灿武 on 2016/10/31 0031.
  */
 
-public class MyFragment extends BaseFragment {
+public class FunnyPictureFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         TextView tv = new TextView(getActivity());
-        tv.setText(getArguments().getString("name"));
+        tv.setText("趣图");
         return tv;
     }
 }
